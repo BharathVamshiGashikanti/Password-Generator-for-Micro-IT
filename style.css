@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+:root {
+  --bg-color: #0e0e10;
+  --glass: rgba(255, 255, 255, 0.08);
+  --primary: #7f5af0;
+  --highlight: #2cb67d;
+  --text: #f1f1f1;
+  --border: rgba(255, 255, 255, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #0e0e10, #1c1c1f);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 2rem;
+}
+
+.container {
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 0 0.5px rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  transition: all 0.3s ease;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+}
+
+.settings label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: #ddd;
+}
+
+input[type="number"] {
+  background: #1f1f23;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.5rem;
+  color: var(--text);
+  width: 70px;
+  text-align: center;
+}
+
+input[type="checkbox"] {
+  accent-color: var(--highlight);
+  transform: scale(1.2);
+}
+
+button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 0.7rem;
+  font-weight: 600;
+  border-radius: 12px;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  transition: background 0.3s ease;
+  box-shadow: 0 0 15px rgba(127, 90, 240, 0.4);
+}
+
+button:hover {
+  background: #9c79f7;
+}
+
+.output {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.output input {
+  flex: 1;
+  padding: 0.7rem;
+  border-radius: 10px;
+  background: #1a1a1d;
+  border: 1px solid var(--border);
+  color: var(--highlight);
+  font-family: monospace;
+  font-size: 0.9rem;
+}
+
+.output button {
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  background: var(--highlight);
+  color: #000;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.output button:hover {
+  background: #3fd69f;
+}
+
+/* Header and theme toggle */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+#themeToggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--text);
+}
+
+/* Strength Meter */
+.strength-meter {
+  height: 10px;
+  width: 100%;
+  background: #333;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+.strength-meter div {
+  height: 100%;
+  transition: width 0.3s ease, background 0.3s ease;
+  width: 0%;
+  background: gray;
+}
+
+.strength-label {
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: #ccc;
+  text-align: right;
+}
+
+/* Light Theme */
+body.light {
+  --bg-color: #ffffff;
+  --glass: rgba(255, 255, 255, 0.6);
+  --primary: #4f46e5;
+  --highlight: #059669;
+  --text: #111;
+  --border: rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to bottom right, #f0f2f5, #ffffff);
+}
+/* Light theme adjustments */
+body.light .container {
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+body.light .settings label {
+  color: #333;
+}
+
+body.light .output input {
+  background: #fff;
+  border: 1px solid var(--border);
+  color: #059669;
+}
+
+body.light input[type="number"] {
+  background: #fff;
+  border: 1px solid var(--border);
+  color: #111;
+}
+
+body.light .strength-label {
+  color: #444;
+}
+
+/* Theme Toggle Button Circle Style */
+#themeToggle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--glass);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: background 0.3s ease;
+}
+
+#themeToggle:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+body.light #themeToggle:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
